@@ -13,7 +13,7 @@ pipeline {
     stages {
 	stage('Checkout') {
             steps {
-           git branch: 'main', url: 'https://github.com/lily4499/infra-jenkins.git'
+           git branch: 'main', url: 'https://github.com/lily4499/argo-kubernetes.git'
   
             }
         }
