@@ -57,7 +57,7 @@ pipeline {
                     sh "kubectl wait --for=condition=Ready pod -l app.kubernetes.io/name=argocd-server -n argocd --timeout=300s"
 
                     // Create or sync the application in ArgoCD
-                    sh "argocd app create $ARGOCD_APP_NAME --repo https://github.com/lily4499/node-app-manifest.git --path ./ --dest-server https://kubernetes.default.svc --dest-namespace default"
+                    sh "argocd app create $ARGOCD_APP_NAME --repo https://github.com/lily4499/argo-kubernetes.git --path ./ --dest-server https://kubernetes.default.svc --dest-namespace default"
                     sh "argocd app sync $ARGOCD_APP_NAME"
                 }
             }
